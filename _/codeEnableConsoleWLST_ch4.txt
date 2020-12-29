@@ -1,0 +1,12 @@
+connect("username","password")
+edit()
+startEdit()
+cmo.setConsoleEnabled(true)
+save()
+activate()
+The following attribute(s) have been changed on MBeans which require server re-start.
+MBean Changed : com.bea:Name=mydomain,Type=Domain Attributes changed : 
+ConsoleEnabled
+Activation completed
+disconnect()
+exit()

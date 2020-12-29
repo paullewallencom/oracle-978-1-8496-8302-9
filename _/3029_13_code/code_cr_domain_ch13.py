@@ -1,0 +1,18 @@
+wl_home=’/app/oracle/Middleware/wlserver_10.3’
+# Open a domain template.
+readTemplate (wl_home + '/common/templates/domains/wls.jar')
+cd('Servers/AdminServer')
+set('ListenPort', 7001 )
+set('ListenAddress',‘10.0.0.12')
+create('AdminServer','SSL')
+cd('SSL/AdminServer')
+set('Enabled', 'True')
+set('ListenPort', 7002)
+cd('/')
+cd('Security/base_domain/User/WebLogic')
+cmo.setName('WebLogic')
+cmo.setPassword('webl0gic ')
+setOption('OverwriteDomain', 'true')
+setOption('ServerStartMode', 'prod')
+writeDomain(domaintarget)
+closeTemplate()
